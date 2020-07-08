@@ -7,7 +7,7 @@ branches:
 notifications:
   email:
     recipients:
-      - d.rubio@outlook.cl
+      - d.rubio@outlook.com
 # services:
 # - mysql
 # - mongodb

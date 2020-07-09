@@ -23,10 +23,9 @@ script:
 #Deploy https://nx-ecosystem-template.herokuapp.com/api
 deploy:
   provider: heroku
-  edge: true
   api_key:
     secure: $HEROKU
   on:
     branch: master
-    #  app: nx-ecosystem-template, por defecto,nombre del artefacto
+    #  app: nx-ecosystem-template, por defecto, nombre del artefacto
 

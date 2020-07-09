@@ -20,7 +20,7 @@ script:
   #SONARCLOUD
   - mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=daniel-nx -Dsonar.login=$SONAR
 
-#Deploy https://nx-ecosystem-template.herokuapp.com
+#Deploy https://nx-ecosystem-template.herokuapp.com/api
 deploy:
   provider: heroku
   api_key:

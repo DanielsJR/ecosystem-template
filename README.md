@@ -1,5 +1,5 @@
 ## Plantilla para la práctica de Ecosistema
-> Plantilla con Spring básico (API, test) 
+> Plantilla con Spring básico (API, test)
 
 ## Project Status
 [![Build Status](https://travis-ci.org/DanielsJR/ecosystem-template.svg?branch=develop)](https://travis-ci.org/DanielsJR/ecosystem-template)

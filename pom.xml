@@ -33,7 +33,6 @@
         <maven.compiler.version>3.8.1</maven.compiler.version>
         <maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>2.21.0</maven-failsafe-plugin.version>
-        <maven-jacoco-plugin.version>0.8.5</maven-jacoco-plugin.version>
         <!-- JUnit -->
         <junit.platform.version>1.2.0</junit.platform.version>
         <!-- OpenAPI -->
@@ -130,21 +129,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>${maven-jacoco-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>report</id>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                        <phase>verify</phase>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
+            </plugins>
     </build>
 
 </project>

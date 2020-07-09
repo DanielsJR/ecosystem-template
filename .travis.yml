@@ -27,5 +27,5 @@ deploy:
     secure: $HEROKU
   on:
     branch: master
-  #app: nx-ecosystem-template
+  app: nx-ecosystem-template
 

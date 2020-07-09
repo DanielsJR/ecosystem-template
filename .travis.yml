@@ -15,7 +15,7 @@ notifications:
 # - mysql -e 'CREATE DATABASE IF NOT EXISTS forge;'
 script:
   #Test unitario y de integracion con cobertura (jacoco)
-  - mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify
+  - mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify sonar:sonar
 
   #SONARCLOUD
   - mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=daniel-nx -Dsonar.login=$SONAR

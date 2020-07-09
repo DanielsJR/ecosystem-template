@@ -1,31 +1,21 @@
 language: java
 branches:
   only:
-    - develop
-    - /^release-[0-999].[0-999]$/
-    - master
+  - develop
+  - "/^release-[0-999].[0-999]$/"
+  - master
 notifications:
   email:
     recipients:
-      - d.rubio@outlook.com
-# services:
-# - mysql
-# - mongodb
-# before_install:
-# - mysql -e 'CREATE DATABASE IF NOT EXISTS forge;'
+    - d.rubio@outlook.com
 script:
-  #Test unitario y de integracion con cobertura (jacoco)
-  - mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify
-
-  #SONARCLOUD
-  - mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=daniel-nx -Dsonar.login=$SONAR
-
-#Deploy https://nx-ecosystem-template.herokuapp.com/
+- mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify
+- mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=daniel-nx
+  -Dsonar.login=$SONAR
 deploy:
   provider: heroku
-  api_key:
-    secure: $HEROKU
   on:
     branch: master
   app: nx-ecosystem-template
-
+  api_key:
+    secure: JlAFMF21aOVqSI4Q+Mhel5k223XLswooK8hYrbikRKHMFOn2bQOB9JM1jh7j4nPLzLKl7J5nVPabFV5k072m5dVsjCNE2mZAupHRGAx1PEV4ujVWqSilX28ugPqb2acPTeAs1drhN4luPLXolkJ+vqmjqmXVlZrhNJrxjleqOU1k0NGQTMerZpRAwoqQGtiIiV+bnhL4WZCciZ+hx4jLRbC1Czr6g0JcOqzGwmF2rbV7ibeFhftwOUJ3tZUwiZIHp0yOIUOWegAn+YlUiSf8llwZTSkliURdh5yr4DZMjdKJUTpzeS+lqyI2V4bNutSTiXkYAzahB8JMeqSbwXRwOvsFJSTwBBWtyyeGXcEusoy5MCcqMNo3HuepLSWr6c3JSHRpMHCaAmF7QYpizW/Zl/X1KD2A5/060V1GwIO7UNCowxv5roIPpmi5JeSWbRarVA55X4L/TdJ+YHFe9jJaRC4Bz+cWsO4mx4+9kUv/87bcL1MzeCM5zzfYB81XsFZ9aEHHjOdKiBWa28IP1rhmNBfaomBrm46xqrbFcDbpvueobXkV95hMVTc9K2ekjqPTywrJskSZTnFYVh6jgjbZak9br91fQFRYI39iMBatK8Vig5B7xF6M88ld+ZVJhssoyE2L25TwT2VXIf5u7EvL1xbqmP89hkLDeCaw3KSnpAs=
